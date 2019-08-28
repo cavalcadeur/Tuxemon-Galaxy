@@ -20,7 +20,7 @@ class SpaceShip extends Object {
         this.cargo = new Cargo(1,[]);
         this.keys = ["ArrowUp","ArrowRight","ArrowLeft"," "];
         this.upgrades = [1,1,false];
-        this.prices = [[0,50,100,200,1000,90000],[0,50,100,200,1000],5000];
+        this.prices = [[0,50,200,1000,3000,10000],[0,50,200,500,1000,2000,5000,15000,50000],5000];
     }
     
     draw(Painter){
@@ -130,8 +130,8 @@ class SpaceShip extends Object {
         }
         buttons[2][0] = this.prices[0][this.upgrades[0]] + "€";
         buttons[3][0] = this.prices[1][this.upgrades[1]] + "€";
-        if (buttons[2][0] == "undefined€") buttons[2][0] = "sold";
-        if (buttons[3][0] == "undefined€") buttons[3][0] = "sold";
+        if (buttons[2][0] == "undefined€") buttons[2][0] = "Sold";
+        if (buttons[3][0] == "undefined€") buttons[3][0] = "Sold";
         if (this.upgrades[2]) buttons[4][0] = "Sold";
         else buttons[4][0] = this.prices[2] + "€";
         for (let i = 0; i < buttons.length; i++){
