@@ -40,7 +40,8 @@ window.Governor = function(){
         generateGalaxy(){
             this.objects = [
                 new SpaceShip("spaceShip",20,[0,0]),
-                new Object("tuto",600,[0,-200],0)
+                new Object("tuto",600,[0,-200],0),
+                new Object("AV8R",30,[-500,500],undefined,[1,-1])
             ];
         }
 
