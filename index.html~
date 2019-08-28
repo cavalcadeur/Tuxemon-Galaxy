@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Kallypse</title>
+        <link rel="shortcut icon" href="images/icon.png" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<script src="start.js"></script>
+		<script src="scene.js"></script>
+		<script src="painter.js"></script>
+		<script src="objects.js"></script>
+		<script src="chef.js"></script>
+		<script src="keyboard.js"></script>
+		<script src="conteur.js"></script>
+		<script src="audioChan.js"></script>
+
+		<script src="objets/croissant.js"></script>
+		<script src="objets/feux_follets.js"></script>
+
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body onload="start()">
+        <canvas id="canvas" width="1100" height="700"></canvas>
+        <div id="R"></div>
+
+		<div id="square"></div>
+        <div id="alert0"></div>
+		<div id="alert1"></div>
+    </body>
+</html>
