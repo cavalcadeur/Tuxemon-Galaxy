@@ -13,3 +13,5 @@ Levaine
 TheSplashDragon
 Josepharaoh99
 Spalding004
+
+Many thanks to the Tuxemon Community. Keep it up, you're awesome !
