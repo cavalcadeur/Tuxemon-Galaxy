@@ -2,6 +2,7 @@
 
 let W,H,ctx,canvas;
 let vecteurs = [[0,-1],[1,0],[0,1],[-1,0]];
+let save = JSON.parse(window.localStorage.getItem("save"));
 
 function resize(){
     W = window.innerWidth;
@@ -21,7 +22,7 @@ function start(){
 	Mouse.init();
     Governor.init(Drawer,KeyBoard);
 
-    Governor.generateGalaxy();
+    Governor.generateGalaxy(save);
     
     Governor.start();
 

@@ -16,11 +16,25 @@ class SpaceShip extends Object {
         this.mass = this.mass / 100;
         this.speed = 0.15;
         this.rotSpeed = 0.1;
-        this.money = 10000;
+        this.money = 0;
         this.cargo = new Cargo(1,[]);
         this.keys = ["ArrowUp","ArrowRight","ArrowLeft"," "];
         this.upgrades = [1,1,false];
-        this.prices = [[0,50,200,1000,3000,10000],[0,50,200,500,1000,2000,5000,15000,50000],5000];
+        this.prices = [[0,50,500,1000,5000,50000],[0,50,200,500,1000,2000,5000,15000,50000],5000];
+    }
+
+    getData(save){
+        if (save != undefined){
+            this.money = save[0];
+            this.upgrades = save[1];
+            this.keys = save[2];
+            this.updateRay();
+            this.cargo.setContent(save[3]);
+        }
+    }
+
+    saveData(){
+        return JSON.stringify([this.money,this.upgrades,this.keys,this.cargo.getContent()]);
     }
     
     draw(Painter){

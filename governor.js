@@ -8,6 +8,7 @@ window.Governor = function(){
             this.goOn = false;
             this.objects = [];
             this.g = 0.3;
+            this.saveInterval = 60; this.saveN = 0;
             this.models = [
                 [["shop",[5000,-750]],
                  [40,[0,-8800],undefined,[11,0]],
@@ -38,12 +39,14 @@ window.Governor = function(){
             this.Drawer = draw; this.KeyBoard = key;
         }
 
-        generateGalaxy(){
+        generateGalaxy(save){
             this.objects = [
                 new SpaceShip("spaceShip",20,[0,0]),
                 new Object("tuto",600,[0,-200],0),
                 new Object("AV8R",30,[-500,500],undefined,[1,-1])
             ];
+
+            this.objects[0].getData(save);
         }
 
         start(){
@@ -81,6 +84,11 @@ window.Governor = function(){
         
         animation(){
             let f = function(t){
+                this.saveN += 1;
+                if (this.saveN >= this.saveInterval){
+                    this.saveN = 0;
+                    this.saveGame();
+                }
                 resize();
                 this.Drawer.setWH(W,H);
 
@@ -92,6 +100,10 @@ window.Governor = function(){
             window.requestAnimationFrame(f.bind(this));
         }
 
+        saveGame(){
+            window.localStorage.setItem("save",this.objects[0].saveData());
+        }
+        
         clic(){
             if (this.objects[0].inShop){
                 this.objects[0].clicShop();

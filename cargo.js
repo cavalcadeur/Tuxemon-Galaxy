@@ -14,6 +14,21 @@ class Cargo {
             if (this.n == 0) this.show = 0;
         }
     }
+    
+    getContent(){
+        let result = [];
+        for (let i = 0; i < this.content.length; i ++){
+            result[i] = [this.content[i][0].src,this.content[i][1]];
+        }
+        return result;
+    }
+
+    setContent(data){
+        for (let i = 0; i < data.length; i ++){
+            this.content[i] = [new Image(),data[i][1]];
+            this.content[i][0].src = data[i][0];
+        }
+    }
 
     add(pack){
         if (this.taille > this.content.length){
