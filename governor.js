@@ -40,11 +40,16 @@ window.Governor = function(){
         }
 
         generateGalaxy(save){
-            this.objects = [
-                new SpaceShip("spaceShip",20,[0,0]),
-                new Object("tuto",600,[0,-200],0),
-                new Object("AV8R",30,[-500,500],undefined,[1,-1])
-            ];
+            if (save == undefined){
+                this.objects = [
+                    new SpaceShip("spaceShip",20,[0,0]),
+                    new Object("tuto",600,[0,-200],0),
+                    new Object("AV8R",30,[-500,500],undefined,[1,-1])
+                ];
+            }
+            else {
+                this.objects = [new SpaceShip("spaceShip",20,[0,0])];
+            }
 
             this.objects[0].getData(save);
         }
