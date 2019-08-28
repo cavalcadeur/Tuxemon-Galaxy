@@ -14,4 +14,8 @@ TheSplashDragon
 Josepharaoh99
 Spalding004
 
+Playtested by :
+Mallory
+
 Many thanks to the Tuxemon Community. Keep it up, you're awesome !
+

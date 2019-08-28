@@ -30,7 +30,8 @@ window.Governor = function(){
             this.planetTypes = [["AV8R",25,150],["grimachin",200,600],["dandicub",500,1500],
                                 ["tweesher",300,800],["bigFin",1500,4000],
                                 ["propellercat",25,100],["botbot",25,120],
-                                ["PiCC",400,1500],["zunna",1300,3000]];
+                                ["PiCC",400,1500],["zunna",1300,3000],
+                                ["eruptibus",250,750]];
         }
 
         init(draw,key){
@@ -70,8 +71,8 @@ window.Governor = function(){
             let playerPos = this.objects[0].pos();
             for (let i = 1; i < this.objects.length; i ++){
                 pos = this.objects[i].pos();
-                if (Math.abs(pos[0] - playerPos[0]) < margin[0]*0.75 &&
-                    Math.abs(pos[1] - playerPos[1]) < margin[1]*0.75) return;
+                if (Math.abs(pos[0] - playerPos[0]) < margin[0] &&
+                    Math.abs(pos[1] - playerPos[1]) < margin[1]) return;
             }
             // let's get rid of these planets
             this.objects = [this.objects[0]];
@@ -126,7 +127,7 @@ window.Governor = function(){
             let h = Math.floor(Math.random()*this.models.length);
             h = this.models[h];
             let r = this.objects[0].getR() + (Math.random() - 0.5)*Math.PI*0.5;
-            let center = [playerPos[0] + Math.cos(r)*margin[0]*0.5,playerPos[1] + Math.sin(r)*margin[1]*0.5,];
+            let center = [playerPos[0] + Math.cos(r)*margin[0]*0.75,playerPos[1] + Math.sin(r)*margin[1]*0.75];
 
             let name = "";
             for (let i = 0; i < h.length; i ++){

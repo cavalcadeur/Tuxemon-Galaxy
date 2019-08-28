@@ -16,7 +16,7 @@ class SpaceShip extends Object {
         this.mass = this.mass / 100;
         this.speed = 0.15;
         this.rotSpeed = 0.1;
-        this.money = 0;
+        this.money = 10000;
         this.cargo = new Cargo(1,[]);
         this.keys = ["ArrowUp","ArrowRight","ArrowLeft"," "];
         this.upgrades = [1,1,false];
@@ -189,8 +189,8 @@ class SpaceShip extends Object {
 
     updateRay(){
         let rays = [[80,1],[160,2],[500,6],[1000,12],[1500,18],[3000,36]];
-        this.lengthRay = rays[this.upgrades[0]][0];
-        this.powerRay = rays[this.upgrades[0]][1];
+        this.lengthRay = rays[this.upgrades[0]-1][0];
+        this.powerRay = rays[this.upgrades[0]-1][1];
 
         this.cargo.taille = this.upgrades[1];
     }

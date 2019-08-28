@@ -29,7 +29,7 @@ class Cargo {
         let price = 0;
         for (let i = 0; i < this.taille; i ++){
             if (this.content[i] != undefined){
-                price += Math.round(this.content[i][1] / 2);
+                price += Math.round(this.content[i][1]);
             }
         }
         this.content = [];
